@@ -304,7 +304,7 @@
     } else if (state === "go") {
       const t = Math.round(performance.now() - startT);
       state = "done"; box.className = "reaction";
-      const verdict = t < 200 ? "Elite reflexes ⚡" : t < 260 ? "Athlete level 💪" : t < 350 ? "Solid. Keep training." : "Warm-up round?";
+      const verdict = t < 200 ? "Elite reflexes" : t < 260 ? "Athlete level" : t < 350 ? "Solid. Keep training." : "Warm-up round?";
       if (!best || t < best) { best = t; localStorage.setItem("reactionBest", t); }
       rTitle.textContent = `${t} ms · ${verdict}`;
       rSub.textContent = `best: ${best} ms · click to go again`;
