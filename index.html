@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amit Kumar Mohanty — Artist & Athlete</title>
+  <meta name="description" content="Amit Kumar Mohanty. Artist and athlete." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <nav class="nav">
+    <a href="#top" class="logo magnetic">AM<span>.</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#art">Art</a></li>
+      <li><a href="#athlete">Athlete</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <canvas id="particles"></canvas>
+    <div class="hero-content">
+      <p class="mono tag">// hello, world</p>
+      <h1 class="glitch" data-text="Amit Kumar Mohanty">Amit Kumar Mohanty</h1>
+      <p class="hero-sub">
+        <span class="mono">&gt;</span> <span id="typed"></span><span class="caret">_</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#art" class="btn magnetic">See the art</a>
+        <a href="#connect" class="btn ghost magnetic">Say hi</a>
+      </div>
+    </div>
+    <p class="hint mono">move your mouse · click to burst</p>
+    <a href="#about" class="scroll-down" aria-label="Scroll down"><span></span></a>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>CREATE</span><span>✦</span><span>TRAIN</span><span>✦</span><span>COMPETE</span><span>✦</span><span>REPEAT</span><span>✦</span>
+      <span>CREATE</span><span>✦</span><span>TRAIN</span><span>✦</span><span>COMPETE</span><span>✦</span><span>REPEAT</span><span>✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <p class="mono label reveal">01 — about</p>
+    <h2 class="reveal">Two disciplines.<br /><span class="dim">One mindset.</span></h2>
+    <div class="about-grid">
+      <p class="reveal">
+        I'm Amit. I make art and I train as an athlete. On paper they look like
+        opposites, one quiet and one loud, but they come from the same place:
+        showing up, putting in the reps, and caring about the details.
+      </p>
+      <div class="cards">
+        <div class="card tilt reveal">
+          <span class="card-icon">✎</span>
+          <h3>Artist</h3>
+          <p>Ideas turned into something you can see.</p>
+        </div>
+        <div class="card tilt reveal">
+          <span class="card-icon">⚡</span>
+          <h3>Athlete</h3>
+          <p>Discipline, effort, and getting a little better every day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ART -->
+  <section id="art" class="section">
+    <p class="mono label reveal">02 — art</p>
+    <h2 class="reveal">Make something<br /><span class="dim">with me.</span></h2>
+    <p class="reveal lead">Draw on the canvas below. Pick a colour, change the brush, try mirror mode, and save what you make.</p>
+
+    <div class="studio reveal">
+      <div class="toolbar">
+        <div class="swatches" id="swatches">
+          <button class="swatch active" data-color="#f5f5f5" style="--c:#f5f5f5" aria-label="White"></button>
+          <button class="swatch" data-color="#c6ff3d" style="--c:#c6ff3d" aria-label="Lime"></button>
+          <button class="swatch" data-color="#7c5cff" style="--c:#7c5cff" aria-label="Violet"></button>
+          <button class="swatch" data-color="#ff4d6d" style="--c:#ff4d6d" aria-label="Red"></button>
+          <button class="swatch" data-color="#3dd6ff" style="--c:#3dd6ff" aria-label="Cyan"></button>
+          <button class="swatch" data-color="rainbow" style="--c:conic-gradient(red,yellow,lime,cyan,blue,magenta,red)" aria-label="Rainbow"></button>
+        </div>
+        <label class="mono size">brush <input type="range" id="brush" min="1" max="40" value="6" /></label>
+        <button class="tool mono" id="mirror">mirror: off</button>
+        <button class="tool mono" id="clear">clear</button>
+        <button class="tool mono" id="save">save ↓</button>
+      </div>
+      <canvas id="sketch"></canvas>
+    </div>
+
+    <h3 class="reveal sub-head">Generative sketches <span class="mono dim">click a tile to regenerate</span></h3>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <!-- ATHLETE -->
+  <section id="athlete" class="section">
+    <p class="mono label reveal">03 — athlete</p>
+    <h2 class="reveal">How fast<br /><span class="dim">are you?</span></h2>
+    <p class="reveal lead">Athletes live on reaction time. Test yours: click the box, wait for green, then click again as fast as you can.</p>
+
+    <div class="reaction reveal" id="reaction" tabindex="0" role="button">
+      <p class="r-title" id="rTitle">Click to start</p>
+      <p class="r-sub mono" id="rSub">best: —</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><span class="mono dim">mindset</span><strong>Discipline</strong></div>
+      <div class="stat reveal"><span class="mono dim">method</span><strong>Consistency</strong></div>
+      <div class="stat reveal"><span class="mono dim">goal</span><strong>Better daily</strong></div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect" class="section connect">
+    <p class="mono label reveal">04 — connect</p>
+    <h2 class="big reveal">Let's <span class="outline">talk.</span></h2>
+    <div class="links">
+      <a class="link magnetic reveal" href="https://www.instagram.com/4mit.m/" target="_blank" rel="noopener">
+        <span class="mono dim">instagram</span><span>@4mit.m ↗</span>
+      </a>
+      <a class="link magnetic reveal" href="https://www.linkedin.com/in/amitkrmohanty/" target="_blank" rel="noopener">
+        <span class="mono dim">linkedin</span><span>amitkrmohanty ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer mono">
+    <span>© <span id="year"></span> Amit Kumar Mohanty</span>
+    <span class="dim">made with code & caffeine</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
